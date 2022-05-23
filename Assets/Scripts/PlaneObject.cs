@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum PlaneType
 {
+    Normal,
     Jet,
     Cargo,
     Commercial
