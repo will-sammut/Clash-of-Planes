@@ -47,6 +47,7 @@ public class MovementScript : MonoBehaviour
         {
             spriteRenderer.sprite = plane.sprite;
             speed = plane.speed;
+            transform.localScale = new Vector3(plane.size, plane.size, plane.size);
         }
 
         RandomDirection();
@@ -68,9 +69,9 @@ public class MovementScript : MonoBehaviour
             }
         }
 
-        Quaternion rotation = Quaternion.LookRotation(((Vector3)velocityDirection + transform.position) - transform.position, transform.TransformDirection(Vector3.up));
-        transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
-
+        Vector2 target = velocityDirection;
+        float rotZ = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
 
         rb.velocity = velocityDirection * speed;
     }
