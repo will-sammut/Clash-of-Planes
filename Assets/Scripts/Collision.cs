@@ -6,18 +6,6 @@ using UnityEngine.EventSystems;
 
 public class Collision : MonoBehaviour
 {
-<<<<<<< Updated upstream
-    void Update() 
-    {
-        Vector3 movement = transform.position;
-
-        movement.y += -0.01f;
-
-        transform.position = movement;
-    }
-=======
->>>>>>> Stashed changes
-    
     void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.gameObject.tag == "Plane")
