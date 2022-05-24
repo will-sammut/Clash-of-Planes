@@ -11,15 +11,19 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        Spawn();
+    }
 
+    public void Spawn()
+    {
         int side = Random.Range(0, 3);
         float spawnX = 0;
         float spawnY = 0;
-        
+
         switch (side)
         {
             case 0: // top
-                spawnX = Random.Range(0,Screen.width);
+                spawnX = Random.Range(0, Screen.width);
                 spawnY = Screen.height + offset;
                 break;
             case 1: // right
@@ -35,7 +39,7 @@ public class Spawner : MonoBehaviour
                 spawnY = Random.Range(0, Screen.height);
                 break;
         }
-        
+
         Vector3 spawnPoint = cam.ScreenToWorldPoint(new Vector3(spawnX, spawnY, cam.nearClipPlane));
         switch (side)
         {
@@ -53,8 +57,6 @@ public class Spawner : MonoBehaviour
                 break;
         }
 
-        Vector3 rotationPoint = cam.ScreenToWorldPoint(new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), cam.nearClipPlane));
-
-        Instantiate(plane, spawnPoint, Quaternion.LookRotation(rotationPoint));
+        Instantiate(plane, spawnPoint, Quaternion.identity);
     }
 }
