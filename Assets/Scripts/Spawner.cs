@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject plane;
     public float offset;
+    public float zSpawnPosition = 0;
     private Camera cam;
 
     void Start()
@@ -41,6 +42,9 @@ public class Spawner : MonoBehaviour
         }
 
         Vector3 spawnPoint = cam.ScreenToWorldPoint(new Vector3(spawnX, spawnY, cam.nearClipPlane));
+        // KJ: cam.nearClipPlane spawned the planes out of touching distance but in viewing distance
+        spawnPoint.z = zSpawnPosition;
+
         switch (side)
         {
             case 0: // top
