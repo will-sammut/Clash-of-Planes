@@ -4,17 +4,28 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D other) 
+    void Update() 
     {
-        Destroy(gameObject);
-        Debug.Log("collision");
-        // End game script goes here
+        Vector3 movement = transform.position;
+
+        movement.y += -0.01f;
+
+        transform.position = movement;
     }
     
     void OnTriggerEnter2D(Collider2D other) 
     {
-        // Add one point to score
-        Destroy(gameObject);
-        Debug.Log("trigger");
+        if (other.gameObject.tag == "Plane")
+        {
+            // End the game
+            Destroy(gameObject);
+            Debug.Log("Plane collision");
+        }
+        else if(other.gameObject.tag == "Runway")
+        {
+            // Add one point to score
+            Destroy(gameObject);
+            Debug.Log("Plane landed");
+        }
     }
 }

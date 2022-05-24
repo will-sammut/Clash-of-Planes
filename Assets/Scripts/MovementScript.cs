@@ -20,11 +20,8 @@ public class MovementScript : MonoBehaviour
 
     private List<Vector2> points = new List<Vector2>();
     private Vector2 lastPoint;
-    // private Vector2 lastPositionReatched;
 
     private Vector2 velocityDirection = new Vector2(0f, 1f);
-
-    // private Vector2 target;
 
     private void OnMouseDown()
     {
@@ -67,14 +64,13 @@ public class MovementScript : MonoBehaviour
             ChangeDirection(points[0]);
             if (Vector2.Distance(transform.position, points[0]) < followDistance)
             {
-                // lastPositionReatched = points[0];
                 points.RemoveAt(0);
             }
-
         }
-        Vector2 target = velocityDirection;
-        float rotZ = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
+
+        Quaternion rotation = Quaternion.LookRotation(((Vector3)velocityDirection + transform.position) - transform.position, transform.TransformDirection(Vector3.up));
+        transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+
 
         rb.velocity = velocityDirection * speed;
     }
