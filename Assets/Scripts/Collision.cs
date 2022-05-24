@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Collision : MonoBehaviour
-{   
+{
     void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.gameObject.tag == "Plane")
