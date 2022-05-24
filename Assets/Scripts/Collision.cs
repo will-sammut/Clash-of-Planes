@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Collision : MonoBehaviour
 {
+<<<<<<< Updated upstream
     void Update() 
     {
         Vector3 movement = transform.position;
@@ -12,6 +15,8 @@ public class Collision : MonoBehaviour
 
         transform.position = movement;
     }
+=======
+>>>>>>> Stashed changes
     
     void OnTriggerEnter2D(Collider2D other) 
     {

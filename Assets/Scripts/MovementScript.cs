@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class MovementScript : MonoBehaviour
 {
     [Header("Plane Settings")]
-    [Range(1f, 20f)]
+    [Range(1f, 20f)]x§
     [SerializeField] private float speed = 10f;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private PlaneObject plane;
