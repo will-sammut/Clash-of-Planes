@@ -17,5 +17,6 @@ public class PlaneObject : ScriptableObject
     public Sprite sprite;
     public float speed;
     public float size;
+    public string destination;
     //public string description;
 }
