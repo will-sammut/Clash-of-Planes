@@ -5,6 +5,11 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class GameMangement : MonoBehaviour
 {
+    /*This script acts as a game manager. It contains the functions required 
+     * for amending the player's score, updating the time, pausing and loading
+     * a different scene. It was written by Stephen McGuinness and Angela Woodhouse on the 25/05/2022 */
+
+
     //  u.i elements 
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI scoreText;
