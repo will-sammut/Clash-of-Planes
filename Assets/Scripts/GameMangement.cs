@@ -16,7 +16,7 @@ public class GameMangement : ScriptableObject
     // timer element used to perpetually update
     private float timer;
     // bool to ensure either pause or resume the scene
-    bool isPaused = false;
+    public bool isPaused { get; private set; } = false;
 
     //  game states
     // [System.Serializable] public enum SceneState
@@ -33,7 +33,7 @@ public class GameMangement : ScriptableObject
     {
         //Sets the state of the scene
         isPaused = isPause;
-        Time.timeScale = isPause ? 1f : 0f;
+        Time.timeScale = isPause ? 0f : 1f;
     }
 
     public void PauseToggle() => Pause(!isPaused);
@@ -46,6 +46,7 @@ public class GameMangement : ScriptableObject
 
     public void OnEnable()
     {
+        Pause(false);
         ResetData();
     }
     // resets both the time and score to zero

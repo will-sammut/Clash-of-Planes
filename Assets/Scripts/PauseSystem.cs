@@ -10,22 +10,19 @@ public class PauseSystem : MonoBehaviour
 
     //reference to the scriptable object: game management
     public GameMangement gameManager;
+    public GameObject UI;
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        
+        UI.SetActive(gameManager.isPaused);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             gameManager.PauseToggle();
+            UI.SetActive(gameManager.isPaused);
         }
-
-
     }
 }
