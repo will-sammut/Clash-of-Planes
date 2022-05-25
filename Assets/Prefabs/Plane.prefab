@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 5455305546013952922}
   - component: {fileID: 5455305546013952923}
   - component: {fileID: 5455305546013952999}
-  - component: {fileID: 1411727607026112563}
+  - component: {fileID: 6965510706509387257}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -271,7 +271,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.56
---- !u!114 &1411727607026112563
+--- !u!114 &6965510706509387257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,10 +280,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5455305546013952920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8742ed6c55a04b47ae895f62c97527c, type: 3}
+  m_Script: {fileID: 11500000, guid: f412dc91348fef64b80981409664a4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planeSprite: {fileID: 5455305546013952997}
 --- !u!1 &5455305546021022112
 GameObject:
   m_ObjectHideFlags: 0
