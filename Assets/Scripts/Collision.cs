@@ -6,16 +6,13 @@ using UnityEngine.EventSystems;
 
 public class Collision : MonoBehaviour
 {
+    public SpriteRenderer planeSprite;
+
     public void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.gameObject.tag == "Plane")
+        if(other.gameObject.tag == "Runway")
         {
-            // End the game
-            Destroy(gameObject);
-            Debug.Log("Plane collision");
-        }
-        else if(other.gameObject.tag == "Runway")
-        {
+            // TODO: Put this code einto RunwayCollison.cs
             ILandable IPlane = gameObject.GetComponent<MovementScript>() as ILandable;
             Debug.Log($"Is null?  {IPlane == null}");
             if (IPlane != null)
