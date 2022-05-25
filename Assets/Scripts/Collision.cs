@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Collision : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other) 
+    public void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.gameObject.tag == "Plane")
         {
@@ -16,9 +16,16 @@ public class Collision : MonoBehaviour
         }
         else if(other.gameObject.tag == "Runway")
         {
-            // Add one point to score
-            Destroy(gameObject);
-            Debug.Log("Plane landed");
+            ILandable IPlane = gameObject.GetComponent<MovementScript>() as ILandable;
+            Debug.Log($"Is null?  {IPlane == null}");
+            if (IPlane != null)
+            {
+                if (IPlane.IsLanding()) 
+                {
+                    Destroy(gameObject);
+                    Debug.Log("Landed");
+                }
+            }
         }
     }
 }
