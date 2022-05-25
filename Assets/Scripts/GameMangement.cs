@@ -19,11 +19,11 @@ public class GameMangement : ScriptableObject
     bool isPaused = false;
 
     //  game states
-    public enum SceneState
-    {
-        MainMenu = 0,
-        PlayScene = 1
-    }
+    // [System.Serializable] public enum SceneState
+    // {
+    //     MainMenu = 0,
+    //     PlayScene = 1
+    // }
 
     //  current game state
     
@@ -55,9 +55,9 @@ public class GameMangement : ScriptableObject
         timer = 0;
     }
     // scene manager 
-    public void SceneChanger(SceneState scene)
+    public void SceneChanger(string scene)
     {
-        SceneManager.LoadScene(((int) scene));       
+        SceneManager.LoadScene(scene);       
     }
 
     // method to notify the user on the time etc
