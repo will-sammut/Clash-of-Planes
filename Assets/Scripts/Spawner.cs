@@ -61,6 +61,8 @@ public class Spawner : MonoBehaviour
                 break;
         }
 
-        Instantiate(plane, spawnPoint, Quaternion.identity);
+        GameObject newPlane = Instantiate(plane, spawnPoint, Quaternion.identity);
+        Vector3 randomTarget = new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), cam.nearClipPlane);
+        newPlane.GetComponent<MovementScript>().spawnTarget = cam.ScreenToWorldPoint(randomTarget);
     }
 }

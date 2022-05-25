@@ -16,6 +16,7 @@ public class MovementScript : MonoBehaviour, ILandable
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private PlaneObject plane;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    public Vector2 spawnTarget;
 
     [Header("Path Settings")]
     [SerializeField] private float minDrawDistance = 1f;
@@ -39,7 +40,8 @@ public class MovementScript : MonoBehaviour, ILandable
         }
 
         // Start Up
-        RandomDirection();
+        // RandomDirection();
+        ChangeDirection(spawnTarget);
     }
 
     private void Update()
