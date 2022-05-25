@@ -5,19 +5,17 @@ using TMPro;
 
 public class MainUI : MonoBehaviour
 {
-    public PlaneObject plane;
-
     [SerializeField] public TMP_Text  planeName;
     [SerializeField] public TMP_Text  planeSpeed;
     [SerializeField] public TMP_Text  planeDestination;
+    
+    public PlaneObject plane;
 
-    public void GetPlaneData(PlaneObject plane)
-    {
+    public void GetPlaneData(PlaneObject plane) {
         this.plane = plane;
     } 
 
-    public void DisplayPlaneDetails()
-    {
+    public void DisplayPlaneDetails() {
         // Get details of currently selected aircraft.
         // Display in UI.
 
@@ -26,8 +24,8 @@ public class MainUI : MonoBehaviour
         planeDestination.text = plane.destination;
     }
 
-    public void Settings()
-    {
-        //Open settings menu.
+    public void PauseGame() {
+        // Pause game time.
+        // Display pause UI (Quit, Settings).
     }
 }

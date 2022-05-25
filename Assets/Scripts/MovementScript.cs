@@ -2,8 +2,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class MovementScript : MonoBehaviour
+public class MovementScript : MonoBehaviour, ILandable
 {
+    private bool isFollowing = false;
+    public bool IsLanding()
+    {
+        return isFollowing;
+    }
+
     [Header("Plane Settings")]
     [Range(1f, 20f)]
     [SerializeField] private float speed = 10f;
@@ -41,6 +47,7 @@ public class MovementScript : MonoBehaviour
         // This happens if drawing line
         if (points.Count > 0)
         {
+            isFollowing = true;
             // Turn Vector2 List into Vector3 Array for LineRenderer
             List<Vector3> newPos = new List<Vector3>();
             newPos.Add(transform.position);
@@ -61,6 +68,7 @@ public class MovementScript : MonoBehaviour
         }
         else
         {
+            isFollowing = false;
             // Clean up LineRenderer
             lineRenderer.positionCount = 0;
         }
