@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject plane;
+    [Header("Spawner Settings")]
     public float offset;
     public float zSpawnPosition = 0;
+
+    [Header("Plane Settings")]
+    public GameObject plane;
+    [SerializeField] private float targetZoneOffset = 20f;
+
     private Camera cam;
 
     void Start()
@@ -62,7 +67,23 @@ public class Spawner : MonoBehaviour
         }
 
         GameObject newPlane = Instantiate(plane, spawnPoint, Quaternion.identity);
-        Vector3 randomTarget = new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), cam.nearClipPlane);
-        newPlane.GetComponent<MovementScript>().spawnTarget = cam.ScreenToWorldPoint(randomTarget);
+        float x = Random.Range(targetZoneOffset, Screen.width - targetZoneOffset);
+        float y = Random.Range(targetZoneOffset, Screen.height - targetZoneOffset);
+        Vector2 randomTarget = cam.ScreenToWorldPoint(new Vector3(x, y, cam.nearClipPlane));
+        newPlane.GetComponent<MovementScript>().ChangeDirection(randomTarget);
+    }
+
+    private void OnDrawGizmos()
+    {
+        // TODO: Display where planes can be directed to and the targetZoneOffset
+        //Gizmos.color = Color.white;
+        //Vector2 bottom = Camera.main.ScreenToWorldPoint(new Vector3(targetZoneOffset, targetZoneOffset, Camera.main.nearClipPlane));
+        //Vector2 top = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width - targetZoneOffset, Screen.height - targetZoneOffset, Camera.main.nearClipPlane));
+        //Vector2 bt = new Vector2(bottom.x, top.y);
+        //Vector2 tb = new Vector2(top.x, bottom.y);
+        //Gizmos.DrawLine(bottom, tb);
+        //Gizmos.DrawLine(bt, top);
+        //Gizmos.DrawLine(bt, bottom);
+        //Gizmos.DrawLine(top, tb);
     }
 }

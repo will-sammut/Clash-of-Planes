@@ -10,7 +10,6 @@ public class MovementScript : MonoBehaviour, ILandable
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private PlaneObject plane;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    public Vector2 spawnTarget;
 
     [Header("Path Settings")]
     [SerializeField] private float minDrawDistance = 1f;
@@ -26,6 +25,9 @@ public class MovementScript : MonoBehaviour, ILandable
     private Vector2 velocityDirection = new Vector2(0f, 1f);
     private bool isFollowing = false;
 
+    private Vector2 myLastReached = Vector2.zero;
+    private Vector2 lastVelocityDirection = Vector2.zero;
+
     private void Start()
     {
         // Load data from Scriptable Object
@@ -38,15 +40,17 @@ public class MovementScript : MonoBehaviour, ILandable
 
         // Start Up
         // RandomDirection();
-        ChangeDirection(spawnTarget);
     }
 
     private void Update()
     {
+        Vector2 target;
+
         // This happens if drawing line
         if (points.Count > 0)
         {
             isFollowing = true;
+
             // Turn Vector2 List into Vector3 Array for LineRenderer
             List<Vector3> newPos = new List<Vector3>();
             newPos.Add(transform.position);
@@ -58,22 +62,28 @@ public class MovementScript : MonoBehaviour, ILandable
             lineRenderer.positionCount = newPos.Count;
             lineRenderer.SetPositions(newPos.ToArray());
 
+            target = AngleSmoother();
+
             // Follow points and remove them
             ChangeDirection(points[0]);
             if (Vector2.Distance(transform.position, points[0]) < followDistance)
             {
+                myLastReached = transform.position;
+                lastVelocityDirection = velocityDirection;
                 points.RemoveAt(0);
             }
         }
         else
         {
             isFollowing = false;
+
+            target = velocityDirection;
+
             // Clean up LineRenderer
             lineRenderer.positionCount = 0;
         }
 
-        // Move and rotate to target direction 
-        Vector2 target = velocityDirection;
+        // Move and rotate to target direction
         float rotZ = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
 
@@ -93,7 +103,14 @@ public class MovementScript : MonoBehaviour, ILandable
         // Setup draw.
         lastPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         points.Clear();
-        gameMangement.planeSelected = plane;
+        if (gameMangement != null)
+        {
+            gameMangement.planeSelected = plane;
+        }
+        else
+        {
+            Debug.LogWarning($"<color=cyan>MovementScript.cs</color> : No game mangement set!", gameObject);
+        }
     }
 
     private void OnMouseDrag()
@@ -113,9 +130,14 @@ public class MovementScript : MonoBehaviour, ILandable
         velocityDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
 
-    private void ChangeDirection(Vector2 target)
+    public void ChangeDirection(Vector2 target)
     {
         velocityDirection = ((Vector2)transform.position - target).normalized * -1;
+    }
+
+    private Vector2 DirectionAngleFromTarget(Vector2 source, Vector2 target)
+    {
+        return (source - target).normalized * -1;
     }
 
     #region Gizmos
@@ -131,6 +153,37 @@ public class MovementScript : MonoBehaviour, ILandable
         //Gizmos.color = Color.yellow;
         //Vector2 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //Gizmos.DrawLine(transform.position, target);
+
+        //if (points.Count > 0)
+        //{
+        //    Gizmos.color = Color.yellow;
+        //    Gizmos.DrawLine(myLastReached, points[0]);
+
+        //    Gizmos.color = Color.blue;
+        //    Gizmos.DrawLine(transform.position, points[0]);
+
+        //    Gizmos.color = Color.cyan;
+        //    Gizmos.DrawLine(transform.position, pointLastReached);
+
+        //    Gizmos.color = Color.green;
+        //    Gizmos.DrawLine(pointLastReached, points[0]);
+
+        //    Gizmos.color = Color.magenta;
+        //    Vector2 target = AngleMaths();
+        //    Gizmos.DrawLine(transform.position, target);
+
+        //    Gizmos.color = Color.white;
+        //    Gizmos.DrawLine(transform.position, velocityDirection);
+        //}
     }
     #endregion
+
+    private Vector2 AngleSmoother()
+    {
+        float max = Vector2.Distance(myLastReached, points[0]) - followDistance;
+        float current = Vector2.Distance(transform.position, points[0]) - followDistance;
+        float time = Mathf.Clamp01(((max - current) / max));
+        //Debug.Log($"{lastVelocityDirection} -> {velocityDirection}");
+        return Vector2.Lerp(lastVelocityDirection, velocityDirection, time);
+    }
 }

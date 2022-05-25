@@ -483,7 +483,7 @@ Transform:
   m_GameObject: {fileID: 1033433388}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.21, y: 1.21, z: 1.21}
+  m_LocalScale: {x: 1.45, y: 1.45, z: 1.45}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -535,7 +535,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   time: 1
-  repeatRate: 5
+  repeatRate: 10
 --- !u!114 &1067708718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,9 +548,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ab717ace8a21d48b92c71215d8170f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plane: {fileID: 5455305546013952920, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
   offset: 1
   zSpawnPosition: 0
+  plane: {fileID: 5455305546013952920, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
+  targetZoneOffset: 200
 --- !u!4 &1067708719
 Transform:
   m_ObjectHideFlags: 0
