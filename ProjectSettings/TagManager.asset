@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plane
   - Runway
+  - Warning
   layers:
   - Default
   - TransparentFX
@@ -13,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Warning
+  - Plane Trigger
   - 
   - 
   - 
