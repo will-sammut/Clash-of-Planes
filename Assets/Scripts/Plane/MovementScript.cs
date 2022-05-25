@@ -4,12 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class MovementScript : MonoBehaviour, ILandable
 {
-    private bool isFollowing = false;
-    public bool IsLanding()
-    {
-        return isFollowing;
-    }
-
     [Header("Plane Settings")]
     [Range(1f, 20f)]
     [SerializeField] private float speed = 10f;
@@ -23,10 +17,13 @@ public class MovementScript : MonoBehaviour, ILandable
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private int maxLinePoints = 100;
 
+    [Header("Other")]
+    [SerializeField] private GameMangement gameMangement;
+
     private List<Vector2> points = new List<Vector2>();
     private Vector2 lastPoint;
-
     private Vector2 velocityDirection = new Vector2(0f, 1f);
+    private bool isFollowing = false;
 
     private void Start()
     {
@@ -81,12 +78,20 @@ public class MovementScript : MonoBehaviour, ILandable
         rb.velocity = velocityDirection * speed;
     }
 
+    #region Interface
+    public bool IsLanding()
+    {
+        return isFollowing;
+    }
+    #endregion
+
     #region Movement Interactions 
     private void OnMouseDown()
     {
         // Setup draw.
         lastPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         points.Clear();
+        gameMangement.planeSelected = plane;
     }
 
     private void OnMouseDrag()

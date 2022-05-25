@@ -10,11 +10,14 @@ public class GameMangement : ScriptableObject
      * for amending the player's score, updating the time, pausing and loading
      * a different scene. It was written by Stephen McGuinness and Angela Woodhouse on the 25/05/2022 */
 
+    public PlaneObject planeSelected;
  
     //  score element used to update the score text
     public int score = 0;
+
     // timer element used to perpetually update
     private float timer;
+
     // bool to ensure either pause or resume the scene
     public bool isPaused { get; private set; } = false;
 
