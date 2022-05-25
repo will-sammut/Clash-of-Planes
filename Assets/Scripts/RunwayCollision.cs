@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class RunwayCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ILandable IPlane = other.gameObject.GetComponent<MovementScript>() as ILandable;
+        //Debug.Log($"Is null?  {IPlane == null}");
+        if (IPlane != null)
+        {
+            if (IPlane.IsLanding())
+            {
+                Destroy(other.gameObject);
+                Debug.Log($"Landed {IPlane.IsLanding()}");
+            }
+        }
     }
 }

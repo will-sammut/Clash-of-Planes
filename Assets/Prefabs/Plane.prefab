@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3518784843504064662}
   - component: {fileID: 86665156625653865}
   - component: {fileID: 2566070601690903124}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlaneTrigger
   m_TagString: Plane
   m_Icon: {fileID: 0}
