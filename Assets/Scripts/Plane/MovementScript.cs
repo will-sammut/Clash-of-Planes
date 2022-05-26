@@ -20,13 +20,13 @@ public class MovementScript : MonoBehaviour, ILandable
     [Header("Other")]
     [SerializeField] private GameMangement gameMangement;
 
+    private Vector2 velocityDirection = new Vector2(0f, 1f);
+    private Vector2 lastVelocityDirection = Vector2.zero;
+    private bool isFollowing = false;
     private List<Vector2> points = new List<Vector2>();
     private Vector2 lastPoint;
-    private Vector2 velocityDirection = new Vector2(0f, 1f);
-    private bool isFollowing = false;
-
     private Vector2 myLastReached = Vector2.zero;
-    private Vector2 lastVelocityDirection = Vector2.zero;
+    private bool canDraw = true;
 
     private void Start()
     {
@@ -112,6 +112,7 @@ public class MovementScript : MonoBehaviour, ILandable
         // Setup draw.
         lastPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         points.Clear();
+        canDraw = true;
         if (gameMangement != null)
         {
             gameMangement.planeSelected = plane;
@@ -126,10 +127,15 @@ public class MovementScript : MonoBehaviour, ILandable
     {
         // Draws and stores points.
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Vector2.Distance(lastPoint, mousePos) > minDrawDistance && points.Count < maxLinePoints)
+        if (canDraw && Vector2.Distance(lastPoint, mousePos) > minDrawDistance && points.Count < maxLinePoints)
         {
             points.Add(mousePos);
             lastPoint = mousePos;
+
+            if (points.Count >= maxLinePoints)
+            {
+                canDraw = false;
+            }
         }
     }
     #endregion

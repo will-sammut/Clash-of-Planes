@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warningObject: {fileID: 8325903891610398999, guid: b8db8e166b7fd8e42a571bc0317187a4, type: 3}
-  warningOffset: 25
+  warningOffset: 50
   boundryWarningOffset: 5
 --- !u!1 &5455305546021022112
 GameObject:
