@@ -140,6 +140,10 @@ public class MovementScript : MonoBehaviour, ILandable
     {
         velocityDirection = ((Vector2)transform.position - target).normalized * -1;
     }
+    public void Bounce()
+    {
+        velocityDirection *= -1f;
+    }
 
     private Vector2 DirectionAngleFromTarget(Vector2 source, Vector2 target)
     {
