@@ -14,9 +14,11 @@ public enum PlaneType
 public class PlaneObject : ScriptableObject
 {
     public PlaneType type;
+    public string tag;
     public Sprite sprite;
     public float speed;
     public float size;
     public string destination;
+    public int pointScore = 1;
     //public string description;
 }

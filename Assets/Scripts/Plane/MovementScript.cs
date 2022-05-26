@@ -36,6 +36,7 @@ public class MovementScript : MonoBehaviour, ILandable
             spriteRenderer.sprite = plane.sprite;
             speed = plane.speed;
             transform.localScale = new Vector3(plane.size, plane.size, plane.size);
+            gameObject.tag = plane.tag;
         }
 
         // Start Up
@@ -88,6 +89,11 @@ public class MovementScript : MonoBehaviour, ILandable
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
 
         rb.velocity = velocityDirection * speed;
+    }
+
+    private void OnDestroy()
+    {
+        gameMangement.AmendScore(plane.pointScore);
     }
 
     #region Interface
@@ -162,14 +168,8 @@ public class MovementScript : MonoBehaviour, ILandable
         //    Gizmos.color = Color.blue;
         //    Gizmos.DrawLine(transform.position, points[0]);
 
-        //    Gizmos.color = Color.cyan;
-        //    Gizmos.DrawLine(transform.position, pointLastReached);
-
-        //    Gizmos.color = Color.green;
-        //    Gizmos.DrawLine(pointLastReached, points[0]);
-
         //    Gizmos.color = Color.magenta;
-        //    Vector2 target = AngleMaths();
+        //    Vector2 target = AngleSmoother();
         //    Gizmos.DrawLine(transform.position, target);
 
         //    Gizmos.color = Color.white;
