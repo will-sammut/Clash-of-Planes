@@ -20,18 +20,21 @@ public class BoundryCollision : MonoBehaviour
         Debug.Log($"{Screen.height} {screenPos.y}, {Screen.width} {screenPos.x}");
         if (bounceable)
         {
-            if ((screenPos.y > Screen.height) || (screenPos.y < 0f) || (screenPos.x > Screen.width) || (screenPos.x < 0f))
+            if ((screenPos.y >= Screen.height) || (screenPos.y <= 0f))
             {
-                Debug.Log("Bounce");
-                GetComponent<MovementScript>().Bounce();
+                GetComponent<MovementScript>().BounceVertical();
+                bounceable = false;
+            }
+            if ((screenPos.x >= Screen.width) || (screenPos.x <= 0f))
+            {
+                GetComponent<MovementScript>().BounceHorizontal();
                 bounceable = false;
             }
         }
         else
         {
-            if ((screenPos.y < (Screen.height - 1f)) && (screenPos.y > 1f) && (screenPos.x < (Screen.width - 1f)) && (screenPos.x > 1f))
+            if ((screenPos.y < Screen.height) && (screenPos.y > 0f) && (screenPos.x < Screen.width) && (screenPos.x > 0f))
             {
-                Debug.Log("Now bounce");
                 bounceable = true;
             }
         }
