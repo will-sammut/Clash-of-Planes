@@ -18,6 +18,11 @@ public class GameMangement : ScriptableObject
     // timer element used to perpetually update
     public float timer;
 
+    // Audio Clip
+    [SerializeField] AudioClip audio = null;
+    public AudioClip Audio { get { return audio; } }
+
+
     // bool to ensure either pause or resume the scene
     public bool isPaused { get; private set; } = false;
 
