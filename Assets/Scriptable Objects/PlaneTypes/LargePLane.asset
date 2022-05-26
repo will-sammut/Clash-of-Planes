@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5d97586ad67d474c961072dd9c2b82d, type: 3}
+  m_Name: LargePLane
+  m_EditorClassIdentifier: 
+  type: 0
+  tag: LargePlane
+  sprite: {fileID: 21300000, guid: 365083ede15a0eb428ee7e09ec7dffff, type: 3}
+  speed: 1
+  size: 5
+  destination: 
+  pointScore: 5
