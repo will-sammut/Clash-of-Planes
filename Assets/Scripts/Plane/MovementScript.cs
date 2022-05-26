@@ -36,7 +36,10 @@ public class MovementScript : MonoBehaviour, ILandable
             spriteRenderer.sprite = plane.sprite;
             speed = plane.speed;
             transform.localScale = new Vector3(plane.size, plane.size, plane.size);
-            gameObject.tag = plane.tag;
+            if (!string.IsNullOrEmpty(plane.tag))
+            {
+                gameObject.tag = plane.tag;
+            }
         }
 
         // Start Up
@@ -140,15 +143,9 @@ public class MovementScript : MonoBehaviour, ILandable
     {
         velocityDirection = ((Vector2)transform.position - target).normalized * -1;
     }
-    public void Bounce()
-    {
-        velocityDirection *= -1f;
-    }
+    public void BounceHorizontal() => velocityDirection.x *= -1;
 
-    private Vector2 DirectionAngleFromTarget(Vector2 source, Vector2 target)
-    {
-        return (source - target).normalized * -1;
-    }
+    public void BounceVertical() => velocityDirection.y *= -1;
 
     #region Gizmos
     private void OnDrawGizmos()
