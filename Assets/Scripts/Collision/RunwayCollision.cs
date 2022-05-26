@@ -11,16 +11,18 @@ public class RunwayCollision : MonoBehaviour
         //Debug.Log($"Is null?  {IPlane == null}");
         if (IPlane != null)
         {
+            bool foundTag = false;
             if(allowedOnRunway.Count == 0) return;
             foreach (string tag in allowedOnRunway)
             {
                 //Debug.Log($"{tag} other is {other.gameObject.tag}");
                 if (other.gameObject.tag == tag)
                 {
+                    foundTag = true;
                     break;
                 }
-                return;
             }
+            if (!foundTag) return;
             if (IPlane.IsLanding())
             {
                 Destroy(other.gameObject);

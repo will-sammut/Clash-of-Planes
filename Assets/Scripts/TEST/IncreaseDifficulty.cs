@@ -6,24 +6,14 @@ using UnityEngine.Events;
 public class IncreaseDifficulty : MonoBehaviour
 {
     public GameMangement gameManager;
-    public Spawner spawner;
-
     public UnityEvent onTimerFire;
-
     public List<DifficultyScale> difficultyScales;
     public float spawnFrequency;
     public float cooldownTimer;
 
-    GameObject numberOfPlanes;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        // Check for higher scale
         foreach (DifficultyScale i in difficultyScales)
         {
             if (i.gameTime <= gameManager.timer)
@@ -31,9 +21,11 @@ public class IncreaseDifficulty : MonoBehaviour
                 spawnFrequency = i.frequency;
             }
         }
-        
+
+        // Increase Timer
         cooldownTimer += Time.deltaTime;
 
+        // Trigger Invoke
         if (cooldownTimer >= spawnFrequency)
         {
             onTimerFire.Invoke();

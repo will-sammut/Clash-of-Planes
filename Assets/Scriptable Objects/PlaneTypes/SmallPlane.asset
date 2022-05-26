@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 0
   tag: SmallPlane
   sprite: {fileID: 21300000, guid: 4581c60d6472ead4fa2f51a307478a66, type: 3}
-  speed: 1
-  size: 2
+  speed: 3
+  size: 0.1
   destination: 
   pointScore: 1

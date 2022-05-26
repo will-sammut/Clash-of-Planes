@@ -11,6 +11,7 @@ TagManager:
   - LargePlane
   - Helicopter
   - Music
+  - SmallPlane
   layers:
   - Default
   - TransparentFX

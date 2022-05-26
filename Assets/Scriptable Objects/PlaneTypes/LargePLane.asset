@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5d97586ad67d474c961072dd9c2b82d, type: 3}
-  m_Name: LargePLane
+  m_Name: LargePlane
   m_EditorClassIdentifier: 
   type: 0
   tag: LargePlane
-  sprite: {fileID: 21300000, guid: 365083ede15a0eb428ee7e09ec7dffff, type: 3}
-  speed: 1
-  size: 5
+  sprite: {fileID: 21300000, guid: 6e9fe40c21c9f7d478fa511dbe091182, type: 3}
+  speed: 2
+  size: 0.25
   destination: 
   pointScore: 5
