@@ -22,7 +22,8 @@ public class UpdateUiData : MonoBehaviour
 	[Header("Extra")]
 	public string scorePrefix = "Score: ";
 
-	void Update()
+   
+    void Update()
 	{
 		timerText.text = gameManager.GameTimer();
 		scoreText.text = scorePrefix + gameManager.score.ToString();

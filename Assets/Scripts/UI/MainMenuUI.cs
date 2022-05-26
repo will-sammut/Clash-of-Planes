@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
+    //public GameMangement audio;
+
+    /*public void Awake()
+    {
+        DontDestroyOnLoad(audio.Audio);
+    }*/
     public void Play() {
         // Get next scene in build index. 
         Debug.Log("Play Button Pressed");
