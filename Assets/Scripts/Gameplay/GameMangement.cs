@@ -16,7 +16,7 @@ public class GameMangement : ScriptableObject
     public int score = 0;
 
     // timer element used to perpetually update
-    private float timer;
+    public float timer;
 
     // bool to ensure either pause or resume the scene
     public bool isPaused { get; private set; } = false;
