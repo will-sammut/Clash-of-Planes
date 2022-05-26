@@ -25,7 +25,7 @@ public class RunwayCollision : MonoBehaviour
             if (!foundTag) return;
             if (IPlane.IsLanding())
             {
-                Destroy(other.gameObject);
+                other.gameObject.GetComponent<Landing>().LandPlane();
                 //Debug.Log($"Landed {IPlane.IsLanding()}");
             }
         }
