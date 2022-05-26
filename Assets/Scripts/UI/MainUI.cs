@@ -22,6 +22,7 @@ public class MainUI : MonoBehaviour
         planeName.text = plane.name;
         planeSpeed.text = plane.speed.ToString();
         planeDestination.text = plane.destination;
+
     } 
 
     public void Update() {
