@@ -14,7 +14,7 @@ public class RunwayCollision : MonoBehaviour
             if(allowedOnRunway.Count == 0) return;
             foreach (string tag in allowedOnRunway)
             {
-                Debug.Log($"{tag} other is {other.gameObject.tag}");
+                //Debug.Log($"{tag} other is {other.gameObject.tag}");
                 if (other.gameObject.tag == tag)
                 {
                     break;
@@ -24,7 +24,7 @@ public class RunwayCollision : MonoBehaviour
             if (IPlane.IsLanding())
             {
                 Destroy(other.gameObject);
-                Debug.Log($"Landed {IPlane.IsLanding()}");
+                //Debug.Log($"Landed {IPlane.IsLanding()}");
             }
         }
     }
