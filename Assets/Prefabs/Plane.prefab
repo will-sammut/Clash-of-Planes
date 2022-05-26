@@ -61,6 +61,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e772955bda6a4514dba77435e3dea50d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onCollision:
+    m_PersistentCalls:
+      m_Calls: []
+  particles: {fileID: 0}
 --- !u!1 &3119353852452061732
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +301,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83a32bb6b6d05c4dba3becd8796b2fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceable: 0
+  warningObject: {fileID: 8325903891610398999, guid: b8db8e166b7fd8e42a571bc0317187a4, type: 3}
+  warningOffset: 25
+  boundryWarningOffset: 5
 --- !u!1 &5455305546021022112
 GameObject:
   m_ObjectHideFlags: 0
