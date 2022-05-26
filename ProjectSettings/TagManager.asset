@@ -7,6 +7,9 @@ TagManager:
   - Plane
   - Runway
   - Warning
+  - MediumPlane
+  - LargePlane
+  - Helicopter
   layers:
   - Default
   - TransparentFX
