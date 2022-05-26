@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ab717ace8a21d48b92c71215d8170f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 1
+  offset: 5
   zSpawnPosition: 0
   plane: {fileID: 5455305546013952920, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
   targetZoneOffset: 200

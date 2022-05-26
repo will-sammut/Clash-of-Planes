@@ -9,7 +9,7 @@ public class WarningTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         planeSprite.color = Color.red;
-        Debug.Log("Plane warning");
+        //Debug.Log("Plane warning");
     }
 
     private void OnTriggerExit2D(Collider2D collision)
