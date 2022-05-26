@@ -9,6 +9,7 @@ public class MainUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text  planeName;
     [SerializeField] private TMP_Text  planeSpeed;
+    [SerializeField] private TMP_Text  planeType;
     [SerializeField] private TMP_Text  planeDestination;
     
     public GameMangement gameManager;
@@ -22,7 +23,7 @@ public class MainUI : MonoBehaviour
         planeName.text = plane.name;
         planeSpeed.text = plane.speed.ToString();
         planeDestination.text = plane.destination;
-
+        planeType.text = plane.type.ToString();
     } 
 
     public void Update() {
