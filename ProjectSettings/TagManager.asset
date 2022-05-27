@@ -12,6 +12,7 @@ TagManager:
   - Helicopter
   - Music
   - SmallPlane
+  - Arrow
   layers:
   - Default
   - TransparentFX

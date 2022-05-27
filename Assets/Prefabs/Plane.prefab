@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 7274305935096657716}
   - component: {fileID: 7247261676308796152}
   - component: {fileID: 4490605626326502123}
+  - component: {fileID: 5314269412837135045}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Plane
@@ -512,6 +513,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helicopterBlade: {fileID: 8290348129864233691}
+--- !u!114 &5314269412837135045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5455305546013952920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a86868afebcd43a45b31db10183669fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowSprite: {fileID: 0}
 --- !u!1 &5455305546021022112
 GameObject:
   m_ObjectHideFlags: 0
