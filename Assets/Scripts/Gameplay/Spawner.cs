@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Spawner : MonoBehaviour
 {
     [Header("Spawner Settings")]
     public float offset;
     public float zSpawnPosition = 0;
+    public UnityEvent onSpawn;
 
     [Header("Plane Settings")]
     public GameObject plane;
@@ -82,6 +84,7 @@ public class Spawner : MonoBehaviour
         Vector2 randomTarget = cam.ScreenToWorldPoint(new Vector3(x, y, cam.nearClipPlane));
         MovementScript ms = newPlane.GetComponent<MovementScript>();
         ms.ChangeDirection(randomTarget);
+        onSpawn.Invoke();
 
         // "Random" plane profile
         if (planeProfiles != null && planeProfiles.Count > 0)
