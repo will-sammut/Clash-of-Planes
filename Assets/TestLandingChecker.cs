@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class TestLandingChecker : MonoBehaviour
 {
-    public Ray ray;
-
     private void OnMouseUp()
     {
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //Debug.Log($"{}");
     }
 }
