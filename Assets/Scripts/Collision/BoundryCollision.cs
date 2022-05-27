@@ -6,7 +6,7 @@ public class BoundryCollision : MonoBehaviour
 {
     private Camera cam;
     private bool onScreen;
-    [SerializeField] private float screenBounceOffset;
+    [SerializeField] private float screenBounceOffset = 25f;
 
 
     [SerializeField] private GameObject warningObject;
