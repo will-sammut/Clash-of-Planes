@@ -6,6 +6,9 @@ public class BoundryCollision : MonoBehaviour
 {
     private Camera cam;
     private bool onScreen;
+    [SerializeField] private float screenBounceOffset;
+
+
     [SerializeField] private GameObject warningObject;
     private GameObject warning;
     private bool warningOn;
@@ -34,12 +37,12 @@ public class BoundryCollision : MonoBehaviour
         Vector2 screenPos = cam.WorldToScreenPoint(transform.position);
         if (onScreen)
         {
-            if ((screenPos.y >= Screen.height) || (screenPos.y <= 0f))
+            if ((screenPos.y >= Screen.height - screenBounceOffset) || (screenPos.y <= screenBounceOffset))
             {
                 GetComponent<MovementScript>().BounceVertical();
                 onScreen = false;
             }
-            if ((screenPos.x >= Screen.width) || (screenPos.x <= 0f))
+            if ((screenPos.x >= Screen.width - screenBounceOffset) || (screenPos.x <= screenBounceOffset))
             {
                 GetComponent<MovementScript>().BounceHorizontal();
                 onScreen = false;
@@ -48,7 +51,7 @@ public class BoundryCollision : MonoBehaviour
         else
         {
             // becomes on screen
-            if ((screenPos.y < Screen.height) && (screenPos.y > 0f) && (screenPos.x < Screen.width) && (screenPos.x > 0f))
+            if ((screenPos.y < Screen.height  - screenBounceOffset) && (screenPos.y > screenBounceOffset) && (screenPos.x < Screen.width - screenBounceOffset) && (screenPos.x > screenBounceOffset))
             {
                 onScreen = true;
                 Destroy(warning);

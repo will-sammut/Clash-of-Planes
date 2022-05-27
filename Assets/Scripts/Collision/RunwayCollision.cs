@@ -5,7 +5,7 @@ using UnityEngine;
 public class RunwayCollision : MonoBehaviour
 {
     public List<string> allowedOnRunway = new List<string>();
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerStay2D(Collider2D other)
     {
         ILandable IPlane = other.gameObject.GetComponent<MovementScript>() as ILandable;
         //Debug.Log($"Is null?  {IPlane == null}");

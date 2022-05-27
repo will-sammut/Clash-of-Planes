@@ -9,7 +9,7 @@ public class PlaneCollision : MonoBehaviour
     public GameObject particles;
     public ObjectIsVisible visible;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (visible.collidable)
         {
