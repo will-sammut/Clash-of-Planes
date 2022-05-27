@@ -5,13 +5,14 @@ using UnityEngine;
 public class RunwayCollision : MonoBehaviour
 {
     public List<string> allowedOnRunway = new List<string>();
+
     public void OnTriggerStay2D(Collider2D other)
     {
         Vector2 centerPos = transform.position;
         Vector2 otherPos = other.transform.position;
 
-        bool isRight = centerPos.x > otherPos.x;
-        bool isAbove = centerPos.y > otherPos.y;
+        //bool isRight = centerPos.x > otherPos.x;
+        //bool isAbove = centerPos.y > otherPos.y;
 
         ILandable IPlane = other.gameObject.GetComponent<MovementScript>() as ILandable;
         //Debug.Log($"Is null?  {IPlane == null}");

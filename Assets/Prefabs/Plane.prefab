@@ -240,7 +240,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4399220634192163741, guid: 1cfb090001dba71458c97fdc86f84049, type: 2}
   m_audioClip: {fileID: 8300000, guid: 59e2693fc03e06e45afa583222169532, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 7247261676308796152}
   - component: {fileID: 4490605626326502123}
   - component: {fileID: 4170073828916655557}
+  - component: {fileID: 6869811469551374600}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Plane
@@ -720,6 +721,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6869811469551374600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5455305546013952920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a86868afebcd43a45b31db10183669fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5455305546021022112
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,7 +935,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9f81a569eadb61c469c6bd48e437b163, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
