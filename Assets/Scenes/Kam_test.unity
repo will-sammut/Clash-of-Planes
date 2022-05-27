@@ -404,6 +404,54 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Plane
       objectReference: {fileID: 0}
+    - target: {fileID: 5455305546013952922, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
+      propertyPath: gradientDraw.key0.a
+      value: 0.078431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455305546013952922, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
+      propertyPath: gradientDraw.key0.g
+      value: 0.21138191
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455305546013952922, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
+      propertyPath: gradientDraw.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455305546013952922, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
+      propertyPath: gradientDraw.key1.a
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455305546013952922, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
+      propertyPath: gradientDraw.key1.b
+      value: 0.92370105
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455305546013952922, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
+      propertyPath: gradientDraw.key1.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455305546013952922, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
+      propertyPath: gradientFade.key0.a
+      value: 0.078431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455305546013952922, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
+      propertyPath: gradientFade.key0.g
+      value: 0.21138191
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455305546013952922, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
+      propertyPath: gradientFade.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455305546013952922, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
+      propertyPath: gradientFade.key1.a
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455305546013952922, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
+      propertyPath: gradientFade.key1.b
+      value: 0.92370105
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455305546013952922, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
+      propertyPath: gradientFade.key1.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5455305546013952996, guid: e1bbe76dcde62b44b84873a7a5156e94, type: 3}
       propertyPath: m_RootOrder
       value: 3

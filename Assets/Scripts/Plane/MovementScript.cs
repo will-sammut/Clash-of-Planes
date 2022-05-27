@@ -16,6 +16,8 @@ public class MovementScript : MonoBehaviour, ILandable
     [SerializeField] private float followDistance = 1f;
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private int maxLinePoints = 100;
+    [SerializeField] private Gradient gradientDraw;
+    [SerializeField] private Gradient gradientFade;
 
     [Header("Other")]
     [SerializeField] private GameMangement gameMangement;
@@ -125,6 +127,7 @@ public class MovementScript : MonoBehaviour, ILandable
     private void OnMouseDown()
     {
         if (gameMangement.isPaused) return;
+        lineRenderer.colorGradient = gradientDraw;
         // Setup draw.
         lastPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         points.Clear();
@@ -137,6 +140,11 @@ public class MovementScript : MonoBehaviour, ILandable
         {
             Debug.LogWarning($"<color=cyan>MovementScript.cs</color> : No game mangement set!", gameObject);
         }
+    }
+    private void OnMouseUp()
+    {
+        if (gameMangement.isPaused) return;
+        lineRenderer.colorGradient = gradientFade;
     }
 
     private void OnMouseDrag()
