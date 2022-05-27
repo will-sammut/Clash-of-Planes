@@ -76,6 +76,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3606666677344500037}
   - component: {fileID: 8357487034367801480}
+  - component: {fileID: 4117627741272712038}
+  - component: {fileID: 8659600946877845254}
   m_Layer: 0
   m_Name: crash warning
   m_TagString: Untagged
@@ -150,6 +152,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4117627741272712038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972818222453246480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1172c72eabe509042920d2a5abfc9fe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warningSprite: {fileID: 8357487034367801480}
+--- !u!114 &8659600946877845254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972818222453246480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3efa4ad18cc0b7d49994d1f852f3f601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 180
 --- !u!1 &3119353852452061732
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +240,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warningSprite: {fileID: 8357487034367801480}
-  warningSpeed: 160
 --- !u!1 &5455305546013952920
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +525,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helicopterBlade: {fileID: 8290348129864233691}
-  rotorSpeed: 650
 --- !u!1 &5455305546021022112
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8828473056107618356}
   - component: {fileID: 8290348129864233691}
+  - component: {fileID: 5480292190112997485}
   m_Layer: 0
   m_Name: helicopter-blade
   m_TagString: Untagged
@@ -712,3 +739,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5480292190112997485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5589975588148224033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3efa4ad18cc0b7d49994d1f852f3f601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 650

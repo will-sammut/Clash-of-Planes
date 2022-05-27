@@ -31,6 +31,17 @@ public class MovementScript : MonoBehaviour, ILandable
     private Vector2 myLastReached = Vector2.zero;
     private bool canDraw = true;
 
+    private void Awake()
+    {
+        if (plane != null)
+        {
+            if (!string.IsNullOrEmpty(plane.tag))
+            {
+                gameObject.tag = plane.tag;
+            }
+        }
+    }
+
     private void Start()
     {
         // Load data from Scriptable Object
@@ -39,10 +50,6 @@ public class MovementScript : MonoBehaviour, ILandable
             spriteRenderer.sprite = plane.sprite;
             speed = plane.speed;
             transform.localScale = new Vector3(plane.size, plane.size, plane.size);
-            if (!string.IsNullOrEmpty(plane.tag))
-            {
-                gameObject.tag = plane.tag;
-            }
         }
 
         // Start Up
