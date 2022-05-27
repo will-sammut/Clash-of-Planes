@@ -117,8 +117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planeName: {fileID: 5232448918291036293}
   planeSpeed: {fileID: 3056030155654158242}
-  planeType: {fileID: 0}
-  planeSize: {fileID: 0}
+  planeType: {fileID: 8609039988646359791}
+  planeSize: {fileID: 7861386103997471278}
   planeDestination: {fileID: 0}
   gameManager: {fileID: 11400000, guid: 66e21997ab5510e4f81fd24ed046ab4b, type: 2}
   plane: {fileID: 0}
@@ -226,11 +226,11 @@ RectTransform:
   m_Father: {fileID: 6120629144494566707}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 409, y: -33}
-  m_SizeDelta: {x: 285.5184, y: 364.71}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -34, y: 42.128967}
+  m_SizeDelta: {x: 273.5187, y: 349.3821}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &5376900162857485459
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a780a4f0a1e315647bee5db7f12073ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9adbab46afbad4c2794b6924f18267ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -951,11 +951,11 @@ RectTransform:
   m_Father: {fileID: 6120629144494566707}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -545.2472, y: 227.2244}
-  m_SizeDelta: {x: 68.8547, y: 68.4845}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 66.866516, y: 42.130707}
+  m_SizeDelta: {x: 98.26697, y: 97.73859}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &2653317667772683985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1037,7 +1037,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7537124302460284957}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 66e21997ab5510e4f81fd24ed046ab4b, type: 2}
+        m_TargetAssemblyTypeName: GameMangement, IW_Project
+        m_MethodName: SceneChanger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main Menu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8642944093269149771
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ public class MainUI : MonoBehaviour
     [SerializeField] private TMP_Text  planeSpeed;
     [SerializeField] private TMP_Text  planeType;
     [SerializeField] private TMP_Text  planeSize;
-    [SerializeField] private TMP_Text  planeDestination;
     
     public GameMangement gameManager;
 
