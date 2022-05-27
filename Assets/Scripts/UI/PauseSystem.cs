@@ -19,7 +19,7 @@ public class PauseSystem : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !gameManager.gameEnded)
         {
             gameManager.PauseToggle();
             UI.SetActive(gameManager.isPaused);

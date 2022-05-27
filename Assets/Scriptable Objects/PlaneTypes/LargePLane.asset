@@ -16,6 +16,6 @@ MonoBehaviour:
   tag: LargePlane
   sprite: {fileID: 21300000, guid: 6e9fe40c21c9f7d478fa511dbe091182, type: 3}
   speed: 2
-  size: 0.25
+  size: 0.45
   destination: 
   pointScore: 5

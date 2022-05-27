@@ -19,6 +19,7 @@ public class MovementScript : MonoBehaviour, ILandable
 
     [Header("Other")]
     [SerializeField] private GameMangement gameMangement;
+    [SerializeField] private Landing planeLanding;
 
     private Vector2 velocityDirection = new Vector2(0f, 1f);
     private Vector2 lastVelocityDirection = Vector2.zero;
@@ -96,7 +97,21 @@ public class MovementScript : MonoBehaviour, ILandable
 
     private void OnDestroy()
     {
-        gameMangement.AmendScore(plane.pointScore);
+        if (planeLanding == null)
+        {
+            Debug.LogWarning($"<color=cyan>MovementScript.cs</color> : No planeLanding set!");
+            gameMangement.EndGame();
+            return;
+        }
+
+        if (planeLanding.landing)
+        {
+            gameMangement.AmendScore(plane.pointScore);
+        }
+        else
+        {
+            gameMangement.EndGame();
+        }
     }
 
     #region Interface
@@ -109,6 +124,7 @@ public class MovementScript : MonoBehaviour, ILandable
     #region Movement Interactions 
     private void OnMouseDown()
     {
+        if (gameMangement.isPaused) return;
         // Setup draw.
         lastPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         points.Clear();
@@ -125,6 +141,11 @@ public class MovementScript : MonoBehaviour, ILandable
 
     private void OnMouseDrag()
     {
+        if (gameMangement.isPaused)
+        {
+            canDraw = false;
+            return;
+        }
         // Draws and stores points.
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (canDraw && Vector2.Distance(lastPoint, mousePos) > minDrawDistance && points.Count < maxLinePoints)
@@ -155,9 +176,18 @@ public class MovementScript : MonoBehaviour, ILandable
         plane = p;
     }
 
-    public void BounceHorizontal() => velocityDirection.x *= -1;
-
-    public void BounceVertical() => velocityDirection.y *= -1;
+    public void BounceHorizontal()
+    {
+        points.Clear();
+        canDraw = false;
+        velocityDirection.x *= -1;
+    }
+    public void BounceVertical()
+    {
+        points.Clear();
+        canDraw = false;
+        velocityDirection.y *= -1;
+    }
 
     #region Gizmos
     private void OnDrawGizmos()

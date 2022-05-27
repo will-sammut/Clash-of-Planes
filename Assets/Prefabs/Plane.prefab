@@ -64,7 +64,8 @@ MonoBehaviour:
   onCollision:
     m_PersistentCalls:
       m_Calls: []
-  particles: {fileID: 0}
+  particles: {fileID: 2278763234278139192, guid: 5f223272151d03d4c8099d98647335c0, type: 3}
+  visible: {fileID: 7274305935096657716}
 --- !u!1 &3119353852452061732
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,9 +141,10 @@ GameObject:
   - component: {fileID: 5455305546013952922}
   - component: {fileID: 5455305546013952923}
   - component: {fileID: 5455305546013952999}
-  - component: {fileID: 6965510706509387257}
   - component: {fileID: -8201737700068287551}
   - component: {fileID: 3430119742964858510}
+  - component: {fileID: 7274305935096657716}
+  - component: {fileID: 7247261676308796152}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Plane
@@ -241,6 +243,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 5455305546021022114}
   maxLinePoints: 100
   gameMangement: {fileID: 11400000, guid: 66e21997ab5510e4f81fd24ed046ab4b, type: 2}
+  planeLanding: {fileID: 3430119742964858510}
 --- !u!50 &5455305546013952923
 Rigidbody2D:
   serializedVersion: 4
@@ -278,18 +281,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.56
---- !u!114 &6965510706509387257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5455305546013952920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f412dc91348fef64b80981409664a4c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-8201737700068287551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,6 +312,33 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   landDuration: 0.5
+--- !u!114 &7274305935096657716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5455305546013952920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f412dc91348fef64b80981409664a4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collidable: 0
+  invincibilityTime: 0.5
+--- !u!114 &7247261676308796152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5455305546013952920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5417b775b5f54d44aa45f0553deb008f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneSize: 1000
 --- !u!1 &5455305546021022112
 GameObject:
   m_ObjectHideFlags: 0

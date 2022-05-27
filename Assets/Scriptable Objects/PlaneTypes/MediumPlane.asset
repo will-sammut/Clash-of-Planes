@@ -16,6 +16,6 @@ MonoBehaviour:
   tag: MediumPlane
   sprite: {fileID: 21300000, guid: 365083ede15a0eb428ee7e09ec7dffff, type: 3}
   speed: 2
-  size: 0.2
+  size: 0.36
   destination: 
-  pointScore: 4
+  pointScore: 3

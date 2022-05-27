@@ -20,6 +20,14 @@ public class BoundryCollision : MonoBehaviour
         warningOn = false;
     }
 
+    private void OnDestroy()
+    {
+        if (warning != null)
+        {
+            Destroy(warning);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -49,7 +57,10 @@ public class BoundryCollision : MonoBehaviour
 
             if (!warningOn)
             {
-                AddWarning(screenPos);
+                if (warning == null)
+                {
+                    AddWarning(screenPos);
+                }
             }
             else
             {

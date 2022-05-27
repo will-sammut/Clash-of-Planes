@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Landing : MonoBehaviour
 {
-    private bool landing = false;
+    public bool landing { private set; get; } = false;
     public UnityEvent onLand;
     private SpriteRenderer spriteRenderer;
     private Transform planeTransform;

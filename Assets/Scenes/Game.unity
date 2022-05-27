@@ -123,6 +123,103 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &108488907
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1013887557}
+    m_Modifications:
+    - target: {fileID: 4418140442807859357, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_Name
+      value: End Screen Container
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418140442807859358, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1bafcde428f16464b93e5746aca47d7c, type: 3}
 --- !u!1 &211862764
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +586,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1013887557 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6714613585833932995, guid: 4affd534588730a4a9d0c27760e0feff, type: 3}
+  m_PrefabInstance: {fileID: 736019997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1032780312
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +813,7 @@ GameObject:
   - component: {fileID: 1067708719}
   - component: {fileID: 1067708718}
   - component: {fileID: 1067708720}
+  - component: {fileID: 1067708721}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -799,6 +902,33 @@ MonoBehaviour:
     frequency: 0.5
   spawnFrequency: 6
   cooldownTimer: 0
+--- !u!114 &1067708721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067708716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a2ff21cf53753447ad3ba84db24fb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAwake:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 66e21997ab5510e4f81fd24ed046ab4b, type: 2}
+        m_TargetAssemblyTypeName: GameMangement, IW_Project
+        m_MethodName: ResetData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1194049952
 PrefabInstance:
   m_ObjectHideFlags: 0

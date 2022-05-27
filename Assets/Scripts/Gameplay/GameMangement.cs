@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+
 [CreateAssetMenu(fileName = "Game Management", menuName = "Scriptable Objects/Game Management")]
 public class GameMangement : ScriptableObject
 {
@@ -26,6 +28,10 @@ public class GameMangement : ScriptableObject
     // bool to ensure either pause or resume the scene
     public bool isPaused { get; private set; } = false;
 
+    // Allows everything to get updated that the game has ended.
+    public UnityEvent onGameEnd = new UnityEvent();
+    public bool gameEnded { private set; get; } = false;
+
     //  game states
     // [System.Serializable] public enum SceneState
     // {
@@ -44,7 +50,13 @@ public class GameMangement : ScriptableObject
         Time.timeScale = isPause ? 0f : 1f;
     }
 
-    public void PauseToggle() => Pause(!isPaused);
+    public void PauseToggle()
+    {
+        if (!gameEnded)
+        {
+            Pause(!isPaused);
+        }
+    }
 
     // amends the score 
     public void AmendScore(int score)
@@ -54,7 +66,6 @@ public class GameMangement : ScriptableObject
 
     public void OnEnable()
     {
-        Pause(false);
         ResetData();
     }
     // resets both the time and score to zero
@@ -62,11 +73,13 @@ public class GameMangement : ScriptableObject
     {
         score = 0;
         timer = 0;
+        Pause(false);
+        gameEnded = false;
     }
     // scene manager 
     public void SceneChanger(string scene)
     {
-        SceneManager.LoadScene(scene);       
+        SceneManager.LoadScene(scene);
     }
 
     // method to notify the user on the time etc
@@ -78,5 +91,12 @@ public class GameMangement : ScriptableObject
         int miliseconds = Mathf.FloorToInt((timer * 100f) % 100f);
         return minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + miliseconds.ToString("00");
     }
-    
+
+    public void EndGame()
+    {
+        if (gameEnded) return;
+        onGameEnd.Invoke();
+        gameEnded = true;
+        Debug.Log("Game Ended");
+    }
 }
