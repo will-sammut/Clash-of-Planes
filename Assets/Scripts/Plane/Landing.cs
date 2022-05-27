@@ -14,6 +14,9 @@ public class Landing : MonoBehaviour
     private float initScale;
     [SerializeField] private float landDuration;
 
+    [SerializeField] private AudioSource landingSound;
+    private bool Triggered = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +31,11 @@ public class Landing : MonoBehaviour
     {
         if (landing)
         {
-            Trigger();
+            if (!Triggered)
+            {
+                landingSound.Play();
+                Triggered = true;
+            }
             float lerpTime = timeElapsed / landDuration;
             spriteRenderer.color = new Color(1f, 1f, 1f, Mathf.Lerp(1f, 0f, lerpTime));
             planeTransform.localScale = new Vector3(Mathf.Lerp(initScale, 0f, lerpTime), Mathf.Lerp(initScale, 0f, lerpTime), Mathf.Lerp(initScale, 0f, lerpTime));

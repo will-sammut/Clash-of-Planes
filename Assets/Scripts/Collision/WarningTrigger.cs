@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class WarningTrigger : MonoBehaviour
 {
-    public UnityEvent onWarning;
+    [SerializeField] private AudioSource warningAudio;
     public SpriteRenderer warningSprite;
     private bool planeInRange;
 
@@ -24,11 +24,15 @@ public class WarningTrigger : MonoBehaviour
         if(planeInRange)
         {
             warningSprite.enabled = true;
-            onWarning.Invoke();
+            if (!warningAudio.isPlaying)
+            {
+                warningAudio.Play();
+            }
         }
         else
         {
             warningSprite.enabled = false;
+            warningAudio.Stop();
         }
     }
 }
