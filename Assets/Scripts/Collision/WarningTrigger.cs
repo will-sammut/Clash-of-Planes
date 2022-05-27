@@ -4,29 +4,16 @@ using UnityEngine;
 
 public class WarningTrigger : MonoBehaviour
 {
-    public SpriteRenderer warningSprite;
-    private bool planeInRange;
+    public SpriteRenderer planeSprite;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        planeInRange = true;
+        planeSprite.color = Color.red;
+        //Debug.Log("Plane warning");
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        planeInRange = false;
-    }
-
-    private void Update()
-    {
-        if(planeInRange)
-        {
-            warningSprite.transform.Rotate(new Vector3(0, 0, 150 * Time.deltaTime));
-            warningSprite.enabled = true;
-        }
-        else
-        {
-            warningSprite.enabled = false;
-        }
+        planeSprite.color = Color.white;
     }
 }
