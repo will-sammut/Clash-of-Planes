@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WarningTrigger : MonoBehaviour
 {
+    public UnityEvent onWarning;
     public SpriteRenderer warningSprite;
     private bool planeInRange;
 
@@ -22,6 +24,7 @@ public class WarningTrigger : MonoBehaviour
         if(planeInRange)
         {
             warningSprite.enabled = true;
+            onWarning.Invoke();
         }
         else
         {
