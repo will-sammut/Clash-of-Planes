@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   tag: Helicopter
-  sprite: {fileID: 0}
-  speed: 3
-  size: 2
+  sprite: {fileID: 21300000, guid: c81d46f767c8bb949a4a0747e4d7ebec, type: 3}
+  speed: 1.5
+  size: 0.4
   destination: 
   pointScore: 3
