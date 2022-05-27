@@ -76,7 +76,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3606666677344500037}
   - component: {fileID: 8357487034367801480}
-  - component: {fileID: 4117627741272712038}
   - component: {fileID: 8659600946877845254}
   m_Layer: 0
   m_Name: crash warning
@@ -152,19 +151,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4117627741272712038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972818222453246480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1172c72eabe509042920d2a5abfc9fe9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  warningSprite: {fileID: 8357487034367801480}
 --- !u!114 &8659600946877845254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,6 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83a32bb6b6d05c4dba3becd8796b2fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screenBounceOffset: 25
   warningObject: {fileID: 8325903891610398999, guid: b8db8e166b7fd8e42a571bc0317187a4, type: 3}
   warningOffset: 50
   boundryWarningOffset: 5
